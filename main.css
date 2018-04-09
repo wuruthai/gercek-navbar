@@ -1,0 +1,126 @@
+:root {
+  --red: #d33f49;
+  --lila: #d7c0d0;
+  --sari: #eff0d1;
+  --yesil: #77ba99;
+  --siyah: #262730;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+
+.nav {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  background-color: var(--siyah);
+  padding: 1em;
+  border-bottom: var(--red) 10px solid;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__banner {
+  width: 40%;
+  margin: auto;
+}
+
+.nav__icon {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  color: var(--red);
+  font-size: 2em;
+  text-align: left;
+  background-color: var(--siyah);
+  border: none;
+}
+
+.logo {
+  width: 80%;
+}
+
+.nav__menu {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.nav__menu__col {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.nav__menu__button {
+  font-size: 1em;
+  text-decoration: none;
+  color: var(--red);
+  padding: 1vw;
+  margin: 0.1vw;
+  border-bottom: 0.1em solid var(--sari);
+  text-align: left;
+}
+
+.nav__menu__button:hover {
+  background-color: var(--red);
+  color: var(--sari);
+  border-color: var(--red);
+}
+
+.nav__menu__col label {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  padding: 1vw;
+  color: var(--sari);
+}
+
+.active {
+  visibility: initial;
+  opacity: 1;
+  height: auto;
+}
+
+@media only screen and (max-width: 845px) {
+  .nav__menu {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .nav__menu__col {
+    width: 100%;
+  }
+
+  .nav__banner {
+    order: -1;
+    width: 100%;
+  }
+
+  .logo {
+    margin-top: 1em;
+  }
+}

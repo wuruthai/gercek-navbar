@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+   content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+   content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald"
+   rel="stylesheet">
+  <style media="screen">
+    :root {
+      --red: #d33f49;
+      --lila: #d7c0d0;
+      --sari: #eff0d1;
+      --yesil: #77ba99;
+      --siyah: #262730;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* Navbar */
+
+    .nav {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      background-color: var(--siyah);
+      padding: 1em;
+      border-bottom: var(--red) 10px solid;
+      -ms-align-items: center;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__banner {
+      width: 40%;
+      margin: auto;
+    }
+
+    .nav__icon {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .icon {
+      color: var(--red);
+      font-size: 2em;
+      text-align: left;
+      background-color: var(--siyah);
+      border: none;
+    }
+
+    .icon:hover {
+      cursor: pointer;
+    }
+
+    .logo {
+      width: 80%;
+    }
+
+    .nav__menu {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+      -webkit-transition: opacity 0.2s;
+      -o-transition: opacity 0.2s;
+      transition: opacity 0.2s;
+    }
+
+    .nav__menu__col {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+
+    .nav__menu__button {
+      font-size: 1em;
+      text-decoration: none;
+      color: var(--red);
+      padding: 1vw;
+      margin: 0.1vw;
+      border-bottom: 0.1em solid var(--sari);
+      text-align: left;
+    }
+
+    .nav__menu__button:hover {
+      background-color: var(--red);
+      color: var(--sari);
+      border-color: var(--red);
+    }
+
+    .nav__menu__col label {
+      font-size: 1.2em;
+      padding: 1vw;
+      color: var(--sari);
+    }
+
+    .active {
+      visibility: initial;
+      opacity: 1;
+      height: auto;
+    }
+
+    @media only screen and (max-width: 845px) {
+      .nav__menu {
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+      }
+
+      .nav__menu__col {
+        width: 100%;
+      }
+
+      .nav__banner {
+        order: -1;
+        width: 100%;
+      }
+
+      .logo {
+        margin-top: 1em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav"
+   id="nav">
+    <div class="nav__header">
+      <img src="https://gercekgazetesi.net/sites/all/themes/gercek_gazetesi_2013/logo.png"
+       alt="logo"
+       class="logo"></div>
+    <img src="https://gercekgazetesi.net/sites/default/files/kurucu-meclis-banner.jpg"
+     class="nav__banner"
+     alt="banner">
+    <div class="nav__icon">
+      <button class="icon"
+       id="icon"
+       onclick="openNav()">&#9776;</button>
+    </div>
+    <div class="nav__menu"
+     id="nav__menu">
+      <div class="nav__menu__col">
+        <label>Haberler</label>
+        <a href=""
+         class="nav__menu__button">Politika</a>
+        <a href=""
+         class="nav__menu__button">İşçi ve Sendika</a>
+        <a href=""
+         class="nav__menu__button">Uluslararası</a>
+        <a href=""
+         class="nav__menu__button">Kadın</a>
+        <a href=""
+         class="nav__menu__button">Teori</a>
+        <a href=""
+         class="nav__menu__button">Tarih</a>
+        <a href=""
+         class="nav__menu__button">Kültür ve Sanat</a>
+      </div>
+      <div class="nav__menu__col">
+        <label>Yazarlar</label>
+        <a href=""
+         class="nav__menu__button">Sungur Savran</a>
+        <a href=""
+         class="nav__menu__button">Levent Dölek</a>
+        <a href=""
+         class="nav__menu__button">Armağan Tulun</a>
+        <a href=""
+         class="nav__menu__button">Atlen Yıldırım</a>
+        <a href=""
+         class="nav__menu__button">Dilek Pir</a>
+        <a href=""
+         class="nav__menu__button">Mert Kükrer</a>
+        <a href=""
+         class="nav__menu__button">M.Kemal Coşkun</a>
+        <a href=""
+         class="nav__menu__button">Şiar Rizvanoğlu</a>
+        <a href=""
+         class="nav__menu__button">Yılmaz Tan</a>
+      </div>
+      <div class="nav__menu__col">
+        <label>Yayınlar</label>
+        <a href=""
+         class="nav__menu__button">Gerçek Tüm Sayılar</a>
+        <a href=""
+         class="nav__menu__button">Metal İşçisinin Sesi</a>
+        <a href=""
+         class="nav__menu__button">Kamu Emekçisinin Sesi</a>
+        <a href=""
+         class="nav__menu__button">Tekstil İşçisinin Sesi</a>
+        <a href=""
+         class="nav__menu__button">Tekstil İşçisinin Sesi</a>
+        <a href=""
+         class="nav__menu__button">Belediye Emekçisinin Sesi</a>
+        <a href=""
+         class="nav__menu__button">İşçinin Sesi Bursa</a>
+        <a href=""
+         class="nav__menu__button">İşçinin Sesi Çorlu-Çerkezköy</a>
+        <a href=""
+         class="nav__menu__button">İşçinin Sesi Tuzla</a>
+      </div>
+      <div class="nav__menu__col">
+        <label>Diğer Bağlantılar</label>
+        <a href=""
+         class="nav__menu__button">Parti Belgeleri</a>
+        <a href=""
+         class="nav__menu__button">Videolar</a>
+        <label>Diller</label>
+        <a href=""
+         class="nav__menu__button">Türkçe</a>
+        <a href=""
+         class="nav__menu__button">English</a>
+        <a href=""
+         class="nav__menu__button">Kurdi</a>
+        <a href=""
+         class="nav__menu__button">العربية
+          </a>
+
+      </div>
+
+    </div>
+  </nav>
+  Burada ve altında ne varsa navbar açılınca aşağıya iter
+</body>
+<script type="text/javascript">
+  function openNav() {
+    let nav__menu_id = document.getElementById("nav__menu");
+    let icon_id = document.getElementById("icon");
+    if (nav__menu_id.className === "nav__menu") {
+      nav__menu_id.className += " active";
+      icon_id.innerHTML = "&#x2715";
+    } else {
+      nav__menu_id.className = "nav__menu";
+      icon_id.innerHTML = "&#9776";
+    }
+  }
+</script>
+
+</html>
